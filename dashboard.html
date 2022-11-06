@@ -276,12 +276,12 @@ table.table td a {
 table.table td a.add {
     color: #27C46B;
 }
-table.table td a.edit {
+/* table.table td a.edit {
     color: #FFC107;
 }
 table.table td a.delete {
     color: #E34724;
-}
+} */
 table.table td i {
     font-size: 19px;
 }
@@ -339,23 +339,23 @@ $(document).ready(function(){
 			input.each(function(){
 				$(this).parent("td").html($(this).val());
 			});			
-			$(this).parents("tr").find(".add, .edit").toggle();
+			$(this).parents("tr").find(".add").toggle();
 			$(".add-new").removeAttr("disabled");
 		}		
     });
-	// Edit row on edit button click
-	$(document).on("click", ".edit", function(){		
-        $(this).parents("tr").find("td:not(:last-child)").each(function(){
-			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
-		});		
-		$(this).parents("tr").find(".add, .edit").toggle();
-		$(".add-new").attr("disabled", "disabled");
-    });
-	// Delete row on delete button click
-	$(document).on("click", ".delete", function(){
-        $(this).parents("tr").remove();
-		$(".add-new").removeAttr("disabled");
-    });
+// 	// Edit row on edit button click
+// 	$(document).on("click", ".edit", function(){		
+//         $(this).parents("tr").find("td:not(:last-child)").each(function(){
+// 			$(this).html('<input type="text" class="form-control" value="' + $(this).text() + '">');
+// 		});		
+// 		$(this).parents("tr").find(".add, .edit").toggle();
+// 		$(".add-new").attr("disabled", "disabled");
+//     });
+// 	// Delete row on delete button click
+// 	$(document).on("click", ".delete", function(){
+//         $(this).parents("tr").remove();
+// 		$(".add-new").removeAttr("disabled");
+//     });
 });
 </script>
 </head>
